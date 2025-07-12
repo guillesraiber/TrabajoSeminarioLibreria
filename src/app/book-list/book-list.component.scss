@@ -1,0 +1,67 @@
+.book-table {
+  width: 100%;
+  max-width: 100%;
+  margin: 30px 0 30px 0;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  table-layout: auto;
+
+  thead {
+    background-color: #1a237e;
+    color: white;
+
+    th {
+      padding: 14px;
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #ddd;
+      height: 80px; 
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+
+    td {
+      padding: 14px 12px;
+      font-size: 0.95rem;
+      color: #333;
+      vertical-align: middle;
+
+      img {
+        width: 80px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 4px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        display: block;
+      }
+    }
+
+    td:last-child {
+      min-width: 100px;
+    }
+    button {
+      width: auto;
+
+    }
+  }
+}
+.oferta {
+  background-color: #fff8e1; // un amarillo claro
+  font-weight: bold;
+
+  .badge {
+    background-color: #ff9800;
+    color: white;
+  }
+}
+
+
+

@@ -1,0 +1,18 @@
+.quantity-input {
+  width: 60px; // ajustable: probá 40px si querés aún más compacto
+  text-align: center;
+  padding: 0.25rem;
+  font-size: 0.875rem;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

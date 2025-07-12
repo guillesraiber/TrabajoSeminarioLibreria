@@ -1,0 +1,31 @@
+<h2>🛒 Carrito de compras</h2>
+<table class="cart-table">
+    <thead>
+        <tr>
+            <th>Libro</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items; let i = index">
+            <td>{{ item.title }}</td>
+            <td>${{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{item.price * item.quantity }}</td>
+            <td>
+                <button (click)="remove(item.id)">🗑️</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot *ngIf="items.length > 0">
+        <tr>
+            <td colspan="4"><strong>Total: ${{total}}</strong></td>
+            <td colspan="2" style="text-align: right;">
+                <button (click)="clearCart()" class="btn-vaciar">🧹 Vaciar el carrito</button>
+            </td>
+        </tr>
+    </tfoot>
+</table>

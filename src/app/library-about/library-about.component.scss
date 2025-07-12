@@ -1,0 +1,52 @@
+.about {
+  max-width: 720px; // 🔽 Más angosto que antes
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  .hero {
+    background-color: #f6f7f8;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    .hero-img {
+      width: 100%;
+      max-height: 220px;  // 🔽 Altura reducida
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    .hero-text {
+      margin-top: 0.8rem;
+
+      h1 {
+        font-size: 1.8rem; // 🔽 Tamaño de fuente reducido
+        margin: 0;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-top: 0.3rem;
+      }
+    }
+  }
+
+  .content {
+    h2 {
+      font-size: 1.4rem; // 🔽 más chico
+      margin-top: 1rem;
+      color: #444;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #333;
+    }
+  }
+}

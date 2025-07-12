@@ -1,0 +1,54 @@
+<h1 class="section-title">📚 Libros Disponibles</h1>
+
+<table class="book-table">
+  <thead>
+    <tr>
+      <th>Tapa</th>
+      <th>Nombre</th>
+      <th>Autor</th>
+      <th>Género</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Cantidad</th>
+      <th>¿Te interesa un ejemplar?</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (book of books; track book.title) {
+      <tr [class.oferta] = "book.clearance">
+        <td>
+          <img class="img-thumbnail" [src]="book.image" alt="Portada del libro" class="img" />
+        </td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.genre }}</td>
+        <td>
+          <div class="d-flex flex-column align-items-start">
+            <span *ngIf="book.clearance" class="badge text-bg-warning mb-1">🔥¡Oferta!</span>
+            <span>${{ book.price }}</span>
+          </div>
+        </td>
+        <td>
+          <span *ngIf="book.stock > 0" class="badge text-bg-success">Hay stock😄</span>
+          <span *ngIf="book.stock <= 0" class="badge text-bg-danger">No hay stock😔</span>
+        </td>
+         <td> 
+          <app-input-integer 
+            [(quantity)]="book.quantity"
+            [max]="book.stock" 
+            *ngIf="book.stock > 0" 
+            (maxReached)="maxReached($event)">
+          </app-input-integer>
+        </td>
+          <td>
+            <button (click)="addToShoppingCart(book)">Agregar al carrito</button>
+          </td>
+      </tr> 
+    }
+    @empty {
+      <tr>
+        <td colspan="4">❌No hay libros para mostrar❌</td>
+      </tr>
+    }
+  </tbody>
+</table>
