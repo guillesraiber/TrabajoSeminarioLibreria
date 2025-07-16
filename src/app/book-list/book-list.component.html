@@ -34,7 +34,8 @@
         </td>
          <td> 
           <app-input-integer 
-            [(quantity)]="book.quantity"
+            [quantity]="book.quantity"
+            (quantityChange)="book.quantity = $event"
             [max]="book.stock" 
             *ngIf="book.stock > 0" 
             (maxReached)="maxReached($event)">

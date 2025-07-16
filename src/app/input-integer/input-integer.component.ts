@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-input-integer',
+  standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './input-integer.component.html',
   styleUrl: './input-integer.component.scss'
 })
 
-export class InputIntegerComponent {
+export class InputIntegerComponent implements OnInit {
   @Input()
   quantity! : number;
 
@@ -39,7 +40,7 @@ export class InputIntegerComponent {
 
   downQuantity(): void {
     if(this.quantity > 0)
-    this.quantity = this.quantity +-1;
+    this.quantity = this.quantity - 1;
     this.quantityChange.emit(this.quantity);
   }
 

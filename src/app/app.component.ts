@@ -6,6 +6,7 @@ import { InputIntegerComponent} from "./input-integer/input-integer.component";
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, BookListComponent, ShoppingCartComponent, RouterModule, InputIntegerComponent],
   templateUrl:'./app.component.html',
   styleUrl: './app.component.scss'

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Book } from './book-list/Book';
 
-const URL = 'https://686efcb991e85fac429f77ee.mockapi.io/api/v1/books';
+const URL = 'https://6878057131d28a460e1cfd43.mockapi.io/Books';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +19,15 @@ export class BookDataService {
 
   public deleteBook(id: string): Observable<any> {
     return this.http.delete(`${URL}/${id}`);
+  }
+
+  public updateBookStock(book : Book) : Observable<Book> {
+    const bookId = String(book.id);
+  const { id, ...bookWithoutId } = book;
+  
+  console.log('📡 URL:', `${URL}/${bookId}`);
+  console.log('📦 Body:', bookWithoutId);
+  
+  return this.http.put<Book>(`${URL}/${bookId}`, bookWithoutId);
   }
 }

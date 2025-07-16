@@ -9,6 +9,7 @@ import { BookDataService } from '../book-data.service';
 
 @Component({
   selector: 'app-book-list',
+  standalone: true,
   imports: [CommonModule, FormsModule, InputIntegerComponent],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss'
@@ -25,16 +26,14 @@ export class BookListComponent implements OnInit {
     if(result.success) {
       book.quantity = 0;
     }
-
-    this.snackBar.open(result.message, 'Cerrar',{
-      duration: result.success ? 2000 : 3000,
-      panelClass: [result.success ? 'snackbar-success' : 'snackbar-warning']
-    });
   }
 
   ngOnInit(): void {
     this.bookService.getAll().subscribe(data => {
-      this.books = data;
+      this.books = data.map(book =>({
+        ...book,
+        quantity: 0
+      }));
     });
   }
 
