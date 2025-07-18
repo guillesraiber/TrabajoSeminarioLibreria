@@ -21,3 +21,5 @@ Proyecto enfocado en una librería que muestra una lista de libros y un carrito 
 ## Métodos HTTP utilizados
 - `GET` — para obtener datos de los libros desde la MockApi.
 - `PUT` — para actualizar información (stock o cantidad en el carrito).
+
+- *Las imagenes es Stackblitz no cargan pero en el navegador si, si las ponia en assets el navegador no las reconocia
